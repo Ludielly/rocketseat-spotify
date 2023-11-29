@@ -1,6 +1,7 @@
-import { ListMusic, Maximize2, Mic2, MonitorSpeaker, Play, Repeat, Shuffle, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import IconBtn from "./IconBtn";
+import PlayerBtn from "./PlayerBtn";
 
 export default function Footer() {
   return (
@@ -21,13 +22,11 @@ export default function Footer() {
       </div>
       <div className="flex flex-col items-center">
         <div className="flex items-center gap-3">
-          <Shuffle size={18} />
-          <SkipBack className="fill-zinc-200" size={18} />
-          <button className="w-6 h-6 text-zinc-800 flex items-center justify-center pl-0.5 rounded-full bg-zinc-200">
-            <Play className="fill-zinc-800" size={14} />
-          </button>
-          <SkipForward className="fill-zinc-200" size={18} />
-          <Repeat size={18} />
+          <IconBtn icon="shuffle" />
+          <IconBtn icon="prev1" />
+          <PlayerBtn secondaryButton />
+          <IconBtn icon="next1" />
+          <IconBtn icon="repeat" />
         </div>
         <div className="flex items-center gap-2">
           <span className="text-xs text-zinc-500">4:15</span>
@@ -38,16 +37,16 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex items-center gap-2 mr-6">
-        <Mic2 size={18} />
-        <ListMusic size={20} />
-        <MonitorSpeaker size={20} />
+        <IconBtn icon="mic" />
+        <IconBtn icon="list" />
+        <IconBtn icon="conections" />
         <div className="flex items-center gap-2">
-          <Volume2 size={20} />
+          <IconBtn icon="volume" />
           <div className="h-1 rounded-full w-24 bg-zinc-600">
             <div className="bg-zinc-200 h-1 w-20 rounded-full" />
           </div>
         </div>
-        <Maximize2 size={18} />
+        <IconBtn icon="maximize" />
       </div>
     </footer>
   );
